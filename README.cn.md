@@ -23,7 +23,7 @@ npm run build
 npm run serve
 ```
 
-生成的 dist/bundle.js 是未压缩的文件，还可以用在线工具 https://minify-js.com/ 压缩成 bundle.min.js 文件。
+生成的 dist/bundle.js 是未压缩的文件，还可以用在线工具 https://www.toptal.com/developers/javascript-minifier 压缩成 bundle.min.js 文件。
 然后把 index.html 里引用的文件也改成 bundle.min.js 即可。
 
 本地测试版运行在 http://localhost:5000/Samples/TypeScript/Demo/。
