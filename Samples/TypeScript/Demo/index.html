@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=1900">
-  <title>Azure Open AI Virtual Assistant</title>
+  <title>Azure OpenAI Virtual Assistant</title>
   <style>
     html,
     body {
       margin: 0;
-      overflow: hidden;
+      /* overflow: hidden; */
     }
 
     #labelDiv {
       margin: auto;
-      width: 50%;
+      /* width: 50%; */
       z-index: 1;
     }
 
@@ -66,20 +65,25 @@
   <script src="https://unpkg.com/core-js-bundle@3.6.1/minified.js"></script>
   <!-- Live2DCubismCore script -->
   <script src="Core/live2dcubismcore.js"></script>
-  <!-- Build script -->
-  <script src="./dist/bundle.js"></script>
-
+  <!-- Build script <script src="./dist/bundle.js"></script> -->
+  <script src="./dist/bundle.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.3.min.js"
     integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-
 </head>
-
 <body>
-  <input type="hidden" id="config">
-  <input type="hidden" id="conversations">
-  <div id="labelDiv">.
+  <div id="labelDiv">
+    <h1>Azure OpenAI Virtual Assistant</h1>
+    <p>使用 Azure 文本转语音服务，把用户的语音转换成文本，调用 Azure OpenAI 中的 text-davinci-003 模型实现对话，再把返回的文本转换成语音输出。配合 <a href="https://www.live2d.com/">Live2D</a> 的二维动画虚拟人把语音展现出来。</p>
+    <h3>使用方法</h3>    
+    <ol>
+      <li>根据 Config File 的示例创建 Azure OpenAI 资源，以及 Azure 文本语音资源，然后把相应的资源配置填写到 config.json 中，再在下面选择你自己的配置文件。</li>
+      <li>Language 菜单默认是中文普通话，也可选择其它语言</li>
+      <li>点击红点然后说话，再点击红点，等待虚拟人回答即可。</li>
+    </ol>
     <div class="row">
       <div class="column">
+        <input type="hidden" id="config">
+        <input type="hidden" id="conversations">
         <label for="configFileInput">Config File (<a href="config.json" target="_blank">Sample</a>):</label>
         <input type="file" id="configFileInput"><br />
         <label for="prompt">Prompt:</label><br>
@@ -223,9 +227,9 @@
           <option value='vi-VN'>Vietnamese (Vietnam)</option>
           <option value='wuu-CN'>Chinese (Wu, Simplified)</option>
           <option value='yue-CN'>Chinese (Cantonese, Simplified)</option>
-          <option value='zh-CN'>Chinese (Mandarin, Simplified)</option>
+          <option value='zh-CN' selected="selected">Chinese (Mandarin, Simplified)</option>
           <option value='zh-CN-sichuan'>Chinese (Southwestern Mandarin, Simplified)</option>
-          <option value='zh-HK' selected="selected">Chinese (Cantonese, Traditional)</option>
+          <option value='zh-HK'>Chinese (Cantonese, Traditional)</option>
           <option value='zh-TW'>Chinese (Taiwanese Mandarin, Traditional)</option>
           <option value='zu-ZA'>Zulu (South Africa)</option>
         </select>
